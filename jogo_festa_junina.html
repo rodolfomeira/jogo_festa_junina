@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+		<head>
+			<meta charset="utf-8">
+			<title>Adivinhação</title>
+		
+		</head>
+		<body background="barraca-beijo.jpg" text="white">
+		
+		 <marquee behavior="Alternate"><h1 align="center">Arraiar do Liceu Pedro II
+		 </h1></marquee></br></br> 
+        <h1 align="center" >F5 para jogar de novo !!! <br /><br /> 
+					<script>
+					        var num2 =0;		
+							var num2 = Math.floor(Math.random() * 8), // numero sorteado
+								num=0;
+								tentativas=0; 
+								// num e numero informado, tentantivas é numero de tentativas
+								var adivinha=[];
+								adivinha[0] = "Fogueira";
+								adivinha[1] = "Quadrilha";
+								adivinha[2] = "Páu de Sebo";
+								adivinha[3] = "Banderinhas";
+								adivinha[4] = "Pipoca";
+								adivinha[5] = "Barraca de Pesca";
+								adivinha[6] = "Muié Bonita";
+								adivinha[7] = "Caipira";
+                                sexo=prompt("[1] - Masculino  [2] - Feminino")
+								if(sexo==1) { tratamento="Mocinho"}
+								else if(sexo==2) { tratamento="Mocinha"}
+								
+								else tratamento ="Mocinho(a)";
+								
+								nome=prompt(tratamento +" ,qual é seu nome?")
+							function checaNumero() {
+							  
+								
+								num = prompt(nome +" entre com o numero de 0 á 7  para tentar advinhar o que eu escolhi ");
+								
+								// Usuário cancelou o quiz
+								if(num == null) return false;
+								if(num < 0)
+								{
+								  alert(nome+'Não coloque números Negativos ');
+									
+								}
+								
+								
+								
+								// Usuário não informou um número
+								if(parseInt(num).toString()=='NaN') {
+									alert(nome+'Oia  aqui!!!! Que tar digitar um número válido');
+									checaNumero();
+									return false;
+								}
+								
+								tentativas=tentativas+1; // Incrementa as tentativas  tentativas++
+
+								if(parseInt(num) == num2){ // Acertou
+									alert(nome+" parabéns "+ tratamento +"  ocê acertou em " + tentativas + " tentativa(s) !!!");
+									    document.write('<center> <font color="yellow">');
+										if(num2==0)
+										 { 
+										   alert("A imagem sorteada foi "+adivinha[0] + " , que tar nóis se esquentarrr");
+										   document.write('<img src="fogueira.jpg" border="2"></img>') 
+										 }
+										 if(num2==1)
+										 {
+										   alert("A imagem sorteada foi uma "+adivinha[1]+" , que tar ocê entrar na dança");
+										   document.write('<img src="quadrilha.jpg" border="2"></img>') 
+										 }
+										 if(num2==2)
+										 {
+											alert("A imagem sorteada foi o "+adivinha[2] +" , que tar ocê ir no páu de sêbo");
+										    document.write('<img src="paudesebo.jpg" border="2"></img>') 
+										 }
+										 if(num2==3)
+										 {
+										    alert("A imagem sorteada foram "+adivinha[3]);
+										    document.write('<img src="banderinhas.jpg" border="2"></img>') 
+										 
+										 }
+											
+										 if(num2==4)
+										 {
+										     alert("A imagem sorteada foi "+adivinha[4] + " ,que tar pegar uma para nóis");
+										     document.write('<img src="pipoca.jpg" border="2"></img>') 
+										   
+										 }
+										 if (num2==5)
+										 {
+										    alert("A imagem sorteada foram "+adivinha[5]+ ",tá nervoso, vai pescar !!!");
+										    document.write('<img src="barracadepesca.jpg" border="2"></img>') 
+											 
+										 }
+										 if(num2==6)
+										 {
+										    alert("A imagem sorteada foi "+adivinha[6]+ ",mas que prenda mais linda sô !!!");
+										    document.write('<img src="mulhercaipira1.jpg" border="2"></img>') 
+										 }
+										 if(num2==7)
+										 {
+										    alert("A imagem sorteada foi "+adivinha[7]+ " que tar esse caipira ?");
+										    document.write('<img src="caipira1.jpg" border="2"></img>') 
+										 }
+									     document.write('</font></center>');
+									 }
+									
+								
+								else if(parseInt(num) < num2){ // Errou número menor
+									alert(nome+" Chiii!!!, ocê errou,que tar  tentarrrr um número MAIORRRRR.");
+									checaNumero();
+								}
+								else{ //Errou número maior
+									alert(nome+ ",  Chiii !!!!ocê  errou,  que tar  tentarrrr um numero  MENORRRRR.");
+									checaNumero();
+								}   
+							}
+
+								checaNumero()
+					</script>
+		 
+	 
+		</body>
+		
+</html>
